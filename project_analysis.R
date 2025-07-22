@@ -1,6 +1,6 @@
 
 # ------------------------------------------------------------------------------
-# title: "10x Single nuclei RNA (SnRNA), identifying key modules that responsible for intrinsic and extrinsic mechanisms of tumor development in tumor micro-environment (TME), from 21 mouse scRNA libraries."
+# title: Identifying key modules that are responsible for intrinsic and extrinsic mechanisms of tumor development in tumor micro-environment (TME), from 21 mouse scRNA libraries."
 # Author: Nasim Rahmatpour
 # Date: "6/3/2022"
 # ------------------------------------------------------------------------------
@@ -8,8 +8,8 @@
 
 # Project Overview
 
-#This R Markdown document summarizes the analysis of 21 single-cell RNA-seq samples across 3 tumor cell lines, each treated with SOS or Veh. The goal is to understand treatment effects on cell composition, tumor pathway activity, and tumor-specific gene expression patterns.
-#The pipeline includes QC, annotation,  DEG analysis, and pathway scoring.
+#This project analyzes 21 single-nuclei RNA-seq samples across three tumor cell lines, each treated with either SOS or Veh treatments. 
+#The goal is to understand treatment effects on cell composition, tumor pathway activity, and tumor-specific gene expression patterns.
 
 ---
   
@@ -238,7 +238,7 @@ pdf("./BI_out/split_umap.pdf")
 DimPlot(BI_filter, reduction = "umap", split.by = "Sample", group.by = "MajorCellType", ncol = 7, size =5)
 dev.off()
 
-###Task 2: Identifying Tumor vs. Normal Cells Across All Cell Types
+###Task 2: Tumor vs. Normal Cell Identification
 #this part identifies the Tumor vs. Normal Cells based on YFP gene expression. The fastq reads were mapped to YFP sequence by Kallisto. This parts adds the YFP counts of each cell from each sample, adds to the metadata of seurat.
 
 #read the Kallisto outputs by this function
@@ -465,7 +465,7 @@ infercnv_obj = infercnv::run(infercnv_obj,
                              HMM=T,
 )
 
-###Task 3: Differential Expression and Enrichment Analysis in Epithelial/Tumor Cells
+###Task 3: DEG and GO Enrichment in Epithelial Cells (how the genes are differentially expressed in response to the treatment at different cell line)
 #This part is for DGE anlysis based on single cell in each cell line between 2 treatments, making volcano plot, runnign GO enrichment analysis and finding the overlap of up/down regulated gene among 3 cell lines
 
 Rcpp::sourceCpp("/home/chris/project/fast_de/fast_de.cpp")
