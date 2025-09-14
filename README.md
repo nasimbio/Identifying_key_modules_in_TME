@@ -1,6 +1,7 @@
 # Identifying key modules that are responsible for intrinsic and extrinsic mechanisms of tumor development in tumor micro-environment (TME), from 21 mouse scRNA libraries.
 
-Project Overview
+## 📘 Project Overview
+
 This project analyzes 21 single-nuclei RNA-seq samples across three tumor cell lines, each treated with either SOS or Veh treatments. 
 The goal is to understand treatment effects on cell composition, tumor pathway activity, and tumor-specific gene expression patterns.
 ---
